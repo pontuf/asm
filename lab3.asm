@@ -1,8 +1,8 @@
 %include "io.inc"
 section .data
-a dq -56.0
-b dq 11.0
-c dq -44.0
+a dq 3.0
+b dq 10.0
+c dq 1.0
 two dq 2.0
 fmt db "%.3f ", 10,13,0
 cf db "%.3f",0
@@ -92,8 +92,9 @@ CMAIN:
     fstp qword [a]
     push dword [a+4]
     push dword [a]
-    push fmt
+    push cf
     call printf
+    NEWLINE
     add esp, 12
 MONO:
     fstp qword [a]
