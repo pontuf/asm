@@ -3,7 +3,7 @@ section .bss
 a resd 1 
 b resd 1
 section .data
-msg db "НОД равно ",0
+msg db "GCD quals ",0
 
 section .text
 global CMAIN
