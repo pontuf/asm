@@ -1,6 +1,6 @@
 %include "io.inc"
 section .data
-a dq 3.0
+a dq 0.0
 b dq 10.0
 c dq 1.0
 two dq 2.0
@@ -24,6 +24,16 @@ CMAIN:
     push dword [two];-32 | 0 
     
     ;BEGIN
+    
+    ;check if a==0
+    fldz
+    fld qword [esp+24]
+    fcom
+    fstsw ax
+    sahf
+    jz NOROOTS
+    fstp st0
+    fstp st0
     
     ;4
     fld qword [esp]
@@ -182,6 +192,10 @@ COMPLEX:
     add esp, 12
     
     PRINT_STRING ")"
-                                              
+    jmp END
+    
+NOROOTS:
+    PRINT_STRING "а==0, there are no roots!"
+    add esp,32                                             
 END:
     ret
