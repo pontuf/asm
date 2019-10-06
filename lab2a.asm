@@ -1,10 +1,4 @@
 %include "io.inc"
-;section .bss
-;a resq 1
-;b resq 1
-;c resq 1
-;d resq 1
-;x resq 1
 section .data
 a dq 5.0
 b dq 9.4
