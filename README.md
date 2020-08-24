@@ -1,4 +1,4 @@
 # asm
-some asm stuff
+some asm stuff (NASM syntax)
 
-some exercises for asm at university via SASM
+some exercises for asm at university via SASM 
